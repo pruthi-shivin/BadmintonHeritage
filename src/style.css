@@ -196,7 +196,8 @@ body {
 }
 
 .hero-trusted p span {
-  font-size: 400;
+  font-size: 16px;
+  font-weight: 300;
   color: var(--color-white);
 }
 
