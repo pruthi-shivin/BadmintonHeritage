@@ -2,39 +2,26 @@ import logo from "../assets/logo.svg";
 
 const Navbar = () => {
   return (
-    <nav className="absolute top-0 left-0 w-full z-50">
+    <nav className="navbar">
 
-      <div
-        style={{
-          width: "1240px",
-          marginLeft: "auto",
-          marginRight: "auto",
-          paddingTop: "32px",
-          paddingLeft: "50px",
-          paddingRight: "50px",
-        }}
-      >
+      <div className="navbar-container">
 
-        <div className="flex items-center gap-16">
+        <img
+          src={logo}
+          alt="Heritage Logo"
+          className="navbar-logo"
+        />
 
-          <img
-            src={logo}
-            alt="Heritage Logo"
-            className="h-10 w-auto"
-          />
+        <ul className="navbar-menu">
 
-          <ul className="flex items-center gap-10 text-white text-[15px] font-light">
+          <li className="navbar-link">Home</li>
+          <li className="navbar-link">About</li>
+          <li className="navbar-link">Pricing</li>
+          <li className="navbar-link">Coaches</li>
+          <li className="navbar-link">Gallery</li>
+          <li className="navbar-link">Blogs</li>
 
-            <li>Home</li>
-            <li>About</li>
-            <li>Pricing</li>
-            <li>Coaches</li>
-            <li>Gallery</li>
-            <li>Blogs</li>
-
-          </ul>
-
-        </div>
+        </ul>
 
       </div>
 

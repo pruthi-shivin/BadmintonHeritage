@@ -1,0 +1,34 @@
+:root {
+
+
+  --color-primary: #010426;
+  --color-secondary: #4251EE;
+
+  --color-bg: #F3F5F8;
+
+  --color-white: #FFFFFF;
+
+  --color-text: #010426;
+  --color-muted: #ABABAB; 
+
+  --container-width: 1240px;
+
+  --section-gap: 60px;
+
+  --section-gap-small: 60px;
+
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+
+  --hero-size: 60px;
+  --heading-size: 30px;
+  --stat-size: 52px;
+  --body-size: 18px;
+  --small-size: 14px;
+
+  --transition: all .3s ease;
+}
