@@ -1,6 +1,17 @@
 import about from "../assets/about.svg";
 
+import { useGSAP } from "@gsap/react";
+
+import aboutAnimation from "../animations/about";
+import counter from "../animations/counter";
+
 const About = () => {
+
+  useGSAP(() => {
+    aboutAnimation();
+    counter(".counter");
+  });
+
   return (
     <section className="about-section">
 
@@ -33,8 +44,15 @@ const About = () => {
             <div className="about-stats">
 
               <div className="about-stat">
+
                 <h3 className="about-stat-number">
-                  1000+
+                  <span
+                    className="counter"
+                    data-value="1000"
+                  >
+                    0
+                  </span>
+                  +
                 </h3>
 
                 <p className="about-stat-title">
@@ -44,11 +62,19 @@ const About = () => {
                 <p className="about-stat-desc">
                   Nurturing talent with structured development.
                 </p>
+
               </div>
 
               <div className="about-stat">
+
                 <h3 className="about-stat-number">
-                  10+
+                  <span
+                    className="counter"
+                    data-value="10"
+                  >
+                    0
+                  </span>
+                  +
                 </h3>
 
                 <p className="about-stat-title">
@@ -58,11 +84,19 @@ const About = () => {
                 <p className="about-stat-desc">
                   Delivering elite, technique-driven coaching.
                 </p>
+
               </div>
 
               <div className="about-stat">
+
                 <h3 className="about-stat-number">
-                  95%
+                  <span
+                    className="counter"
+                    data-value="95"
+                  >
+                    0
+                  </span>
+                  %
                 </h3>
 
                 <p className="about-stat-title">
@@ -72,6 +106,7 @@ const About = () => {
                 <p className="about-stat-desc">
                   Parents and players trust our results.
                 </p>
+
               </div>
 
             </div>

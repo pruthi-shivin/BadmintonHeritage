@@ -2,16 +2,37 @@ import PricingCard from "./PricingCard";
 import { pricingPlans } from "../data/pricingData";
 
 import coachingImage from "../assets/private-coaching.svg";
-import pricingBg from "../assets/pricing-bg.svg";
+
+import pricingLine from "../assets/pricing-line.svg";
+import pricingBg from "../assets/advanced-pricing-bg.svg";
+
+import arrow from "../assets/arrow-diagonal.svg"
+
+import { useGSAP } from "@gsap/react";
+import pricingAnimation from "../animations/pricing";
+
 
 const Pricing = () => {
+  useGSAP(() => {
+    pricingAnimation();
+});
+
   return (
     <section className="pricing-section">
+
+        <img
+          src={pricingLine}
+          alt=""
+          className="pricing-line"
+        />
+
       <div className="container pricing-container">
+
 
         <div className="pricing-header">
 
           <div>
+
             <div className="section-tag">
               • Our Price
             </div>
@@ -19,6 +40,7 @@ const Pricing = () => {
             <h2 className="pricing-title">
               Choose Your Path to Progress
             </h2>
+
           </div>
 
           <p className="pricing-description">
@@ -33,6 +55,7 @@ const Pricing = () => {
 
         <div className="pricing-content">
 
+
           <div className="pricing-left">
 
             {pricingPlans.map((plan) => (
@@ -43,6 +66,7 @@ const Pricing = () => {
             ))}
 
           </div>
+
 
           <div className="pricing-right">
 
@@ -55,7 +79,9 @@ const Pricing = () => {
             <div className="pricing-overlay">
 
               <button className="pricing-card__icon pricing-card__icon--blue">
-                →
+                <img 
+                  src={arrow}
+                />
               </button>
 
               <h3>
@@ -77,12 +103,6 @@ const Pricing = () => {
           </div>
 
         </div>
-
-        <img
-          src={pricingBg}
-          alt=""
-          className="pricing-shape"
-        />
 
       </div>
     </section>

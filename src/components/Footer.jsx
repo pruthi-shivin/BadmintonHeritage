@@ -1,3 +1,4 @@
+import logo1 from "../assets/logo.svg";
 import logo from "../assets/logo2.svg";
 
 const Footer = () => {
@@ -31,6 +32,11 @@ const Footer = () => {
             Get Started →
           </button>
 
+          <img
+                      src={logo}
+                      alt=""
+                      className="footer-logo-right"
+                    />
         </div>
 
 

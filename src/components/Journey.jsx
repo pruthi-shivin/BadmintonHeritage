@@ -1,12 +1,26 @@
 import journey from "../assets/journey.svg";
+import signal_icon from "../assets/android_cell_dual_4_bar.svg";
+
+import { useGSAP } from "@gsap/react";
+
+import journeyAnimation from "../animations/journey";
+import counter from "../animations/counter";
 
 const Journey = () => {
+  useGSAP(() => {
+
+    journeyAnimation();
+
+    counter(".counter");
+
+});
   return (
     <section className="journey-section">
 
       <div className="container">
 
         <div className="journey-wrapper">
+
 
           <div className="journey-image-wrapper">
 
@@ -25,7 +39,10 @@ const Journey = () => {
                 </span>
 
                 <div className="journey-card-icon">
-                  ✦
+                  <img
+                    src={signal_icon}
+                  />
+                  
                 </div>
 
               </div>
@@ -33,7 +50,12 @@ const Journey = () => {
               <div className="journey-card-content">
 
                 <h3 className="journey-stat">
-                  <span className="journey-number">300</span>
+                  <span className="journey-number"
+                    className="counter"
+                      data-value="300"
+                    >
+                      0
+                  </span>
 
                   <span className="journey-k">
                     k

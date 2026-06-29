@@ -4,6 +4,9 @@ import grace from "../assets/grace.jpg";
 import ethan from "../assets/ethan.jpg";
 import emma from "../assets/emma.jpg";
 import olivia from "../assets/olivia.jpg";
+import book1 from "../assets/book1.svg";
+import book2 from "../assets/book2.svg";
+import book3 from "../assets/book3.svg";
 
 export const testimonials = [
   {
@@ -22,6 +25,7 @@ export const testimonials = [
     image: "/covers/book1.png",
     title: "A Guide to Fantasy Worlds",
     large: true,
+    image: book2,
   },
 
   {
@@ -40,6 +44,7 @@ export const testimonials = [
     image: "/covers/book2.png",
     title: "How to Build a Reading Habit",
     large: true,
+    image: book1,
   },
 
   {
@@ -58,5 +63,6 @@ export const testimonials = [
     image: "/covers/book3.png",
     title: "Top Mystery Novels",
     large: true,
+    image: book3,
   },
 ];

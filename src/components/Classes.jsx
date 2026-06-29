@@ -1,6 +1,14 @@
 import { PROGRAMS } from "../constants/content";
+import arrow from "../assets/arrow-diagonal.svg"
+
+import { useGSAP } from "@gsap/react";
+import classesAnimation from "../animations/classes";
 
 const Classes = () => {
+  useGSAP(() => {
+  classesAnimation();
+});
+
   return (
     <section className="section">
 
@@ -57,7 +65,9 @@ const Classes = () => {
                   </h3>
 
                   <span className="program-arrow">
-                    ↗
+                    <img 
+                      src={arrow}
+                    />
                   </span>
 
                 </div>

@@ -1,7 +1,14 @@
 import leafLeft from "../assets/leaf-left.svg";
 import leafRight from "../assets/leaf-right.svg";
 
+import { useGSAP } from "@gsap/react";
+import ctaAnimation from "../animations/cta";
+
 const CTA = () => {
+  useGSAP(() => {
+  ctaAnimation();
+});
+
   return (
     <section className="cta-section">
 

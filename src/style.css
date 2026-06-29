@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@300;400;500;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap');
 @import "tailwindcss";
 @import "./styles/variables.css";
@@ -79,8 +79,7 @@ body {
 --navbar-left: 76px;
 --navbar-gap: 74px;
 
---hero-trusted-top: 139px;
---hero-trusted-left: 76px;
+
 
 --hero-content-top: 499px;
 --hero-content-left: 76px;
@@ -95,14 +94,6 @@ body {
 /* journey */
   --journey-height: 705px;
   --journey-radius: 24px;
-
-  --journey-title-size: 58px;
-  --journey-title-width: 384px;
-
-  --journey-text-size: 18px;
-
-  --journey-card-width: 280px;
-  --journey-card-height: 150px;
 
   --journey-bg-start: #000000;
   --journey-bg-end: #010426;
@@ -150,16 +141,14 @@ body {
 
 /* hero */
 
-
 .hero-section {
-  padding-top: 20px;
+  padding: 20px;
 }
 
 .hero-wrapper {
   position: relative;
 
-  width: var(--hero-width);
-  height: var(--hero-height);
+  height: calc(100vh - 40px);
 
   margin: 0 auto;
 
@@ -180,15 +169,12 @@ body {
 .hero-trusted {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  position: absolute;
-  top: var(--hero-trusted-top);
-  left: var(--hero-trusted-left);
+  gap: 8px;
   z-index: 10;
 }
 
 .hero-trusted p{
-  margin-top: 12px;
+  margin-top: 8px;
   font-size: 16px;
   font-weight: 300;
   line-height: 124%;
@@ -227,8 +213,8 @@ body {
 
 .hero-content {
   position: absolute;
-  top: var(--hero-content-top);
-  left: var(--hero-content-left);
+  bottom: 32px;
+  padding-left: 57px;
   z-index: 10;
 }
 
@@ -239,28 +225,19 @@ body {
   font-weight: 300;
   color: white;
   max-width: 720px;
-  height: 180px
+  height: 180px;
 }
 
 .hero-badge {
   display: inline-flex;
-
   align-items: center;
-
-  padding: 10px 18px;
-
+  padding: 10px 18px 10px 18px;
   border-radius: 999px;
-
   backdrop-filter: blur(2px);
-
   border: 1px solid rgba(255,255,255,.3);
-
   background: rgba(255,255,255,.1);
-
   color: white;
-
   font-size: 14px;
-
   margin-bottom: 12px;
 }
 
@@ -290,16 +267,16 @@ body {
 .hero-cutout::before {
   content: "";
   position: absolute;
-  left: -40px;
+  left: -16px;
   bottom: 0;
 
-  width: 40px;
-  height: 40px;
+  width: 16px;
+  height: 16px;
 
   background: radial-gradient(
     circle at top left,
-    transparent 40px,
-    var(--color-bg) 40px
+    transparent 16px,
+    var(--color-bg) 16px
   );
 }
 
@@ -307,15 +284,15 @@ body {
   content: "";
   position: absolute;
   right: 0;
-  top: -40px;
+  top: -16px;
 
-  width: 40px;
-  height: 40px;
+  width: 16px;
+  height: 16px;
 
   background: radial-gradient(
     circle at top left,
-    transparent 40px,
-    var(--color-bg) 40px
+    transparent 16px,
+    var(--color-bg) 16px
   );
 }
 
@@ -345,11 +322,10 @@ body {
   color: white;
 }
 
-
 /* navbar */
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -357,19 +333,20 @@ body {
 }
 
 .navbar-container {
-  width: var(--container-width);
+  
   margin: 0 auto;
-
   padding-top: 32px;
-  padding-left: 56px;
-
   display: flex;
-  align-items: center;
-  gap: 74px;
+  align-items: center ;
+  gap: 24px;
+}
+
+.navbar-container ul{
+  margin-left: 41px;
 }
 
 .navbar-logo {
-  width: 67px;
+  width: 59px;
   height: 55px;
   object-fit: contain;
 }
@@ -378,8 +355,8 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
-
   list-style: none;
+  margin-left: 48px;
 }
 
 .navbar-link {
@@ -402,14 +379,14 @@ body {
 .about-section {
   padding-top: var(--section-spacing);
   padding-bottom: var(--section-spacing);
-  margin-top: 60px;
+  margin-top: 72px;
 }
 
 .about-layout {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 48px;
+  margin-top: 28px;
 }
 
 .about-image {
@@ -422,6 +399,7 @@ body {
 
 .about-content {
   width: var(--about-content-width);
+  gap: 120px;
 }
 
 .about-heading {
@@ -447,10 +425,14 @@ body {
   width: 180px;
 }
 
+.about-stat-number{
+  color: var(--color-text);
+}
+
 .about-stat-number {
   font-size: var(--about-stat-number-size);
   line-height: 100%;
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 .about-stat-title {
@@ -501,8 +483,7 @@ body {
 .journey-wrapper {
   position: relative;
 
-  height: var(--journey-height);
-
+  height: calc(100vh - 40px);
   border-radius: var(--journey-radius);
 
   overflow: hidden;
@@ -535,15 +516,18 @@ body {
 
 .journey-card {
   position: absolute;
-
-  left: 220px;
-  bottom: 115px;
-  width: var(--journey-card-width);
-  height: var(--journey-card-height);
+  left: 180px; 
+  bottom: 110px;
+  width: 208px;
+  height: 118px;
   background: rgba(243,245,248,.95);
   backdrop-filter: blur(10px);
   border-radius: 8px;
-  padding: 18px;
+  padding: 6px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .journey-card-header {
@@ -551,21 +535,21 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  margin-bottom: 12px;
+  margin-top: 8px;
 
   color: var(--color-primary);
 }
 
 .journey-card-icon {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
 
   border-radius: 50%;
 
   background: var(--color-accent);
 
   color: white;
-
+  margin-top: -4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -575,20 +559,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 20px;
+  gap: 10px;
 }
 
 .journey-card-content h3 {
-  font-size: 68px;
+  font-size: 60px;
   line-height: 1;
   white-space: nowrap;
   color: var(--color-primary);
+  /* transform: translateX(-14px) translateY(-25px); */
 }
 
 
 .journey-card-content p {
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 10px;
+  font-weight: 300;
+  line-height: 20px;
   color: var(--color-muted);
 }
 
@@ -621,31 +607,23 @@ body {
 
   font-size: 30px;
   font-weight: 400;
-
   color: var(--color-accent);
-
   line-height: 1;
 }
 
 .journey-content {
   width: 44%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  padding-left: 40px;
+  padding-left: 24px;
 }
 
 .journey-title {
-  width: var(--journey-title-width);
-
-  font-size: var(--journey-title-size);
-
+  width: 384px;
+  font-size: 58px;
   font-weight: 400;
-
   line-height: 100%;
-
   color: white;
   margin-bottom: 48px;
 }
@@ -691,10 +669,30 @@ body {
   position: relative;
 }
 
+
+.pricing-line {
+  position: absolute;
+
+  left: 50%;
+  top: 110px;
+
+  width: 1283px;
+  height: auto;
+
+  transform: translateX(-50%);
+
+  opacity: .08;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
 .pricing-container {
   max-width: 1240px;
   margin: 0 auto;
   position: relative;
+  z-index: 2;
 }
 
 .pricing-header {
@@ -734,6 +732,7 @@ body {
   gap: 32px;
 }
 
+
 .pricing-left {
   width: 456px;
 
@@ -743,6 +742,9 @@ body {
 }
 
 .pricing-card {
+  position: relative;
+  overflow: hidden;
+
   width: 456px;
   min-height: 396px;
 
@@ -750,19 +752,35 @@ body {
 
   border-radius: 12px;
 
-  border: 1px solid rgba(171, 171, 171, 0.2);
+  border: 1px solid rgba(171,171,171,.2);
 
-  background: #ffffff;
+  background: #fff;
 
   display: flex;
   flex-direction: column;
 
-  transition: all 0.3s ease;
+  transition: .3s;
 }
 
+.pricing-card-bg {
+  position: absolute;
+
+  right: -120px;
+  bottom: -90px;
+
+  width: 487px;
+  height: auto;
+
+  opacity: 0.08;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+/* 
 .pricing-card:hover {
   transform: translateY(-4px);
-}
+} */
 
 .pricing-card--featured {
   background: #000b84;
@@ -908,17 +926,17 @@ body {
 .pricing-shape {
   position: absolute;
 
-  left: 0;
-  top: 120px;
+  right: 0;
+  bottom: 0;
 
-  width: 100%;
+  width: 220px;
   height: auto;
 
-  opacity: 0.08;
+  opacity: 0.15;
 
   pointer-events: none;
 
-  z-index: 0;
+  z-index: 1;
 }
 
 .pricing-header,
@@ -1014,16 +1032,14 @@ body {
   color: #ffb400;
 }
 
-
 .testimonial-book {
-  margin-top: 24px;
-
+  margin-top: 1px;
   border-radius: 8px;
   overflow: hidden;
 }
 
 .testimonial-book img {
-  width: 100%;
+  width: 50%;
   height: auto;
   display: block;
   object-fit: cover;
@@ -1059,7 +1075,7 @@ body {
 /* cta section */
 
 .cta-section {
-  padding: 40px 0 60px;
+  padding: 60px 0 60px;
 }
 
 .cta-card {
@@ -1367,6 +1383,15 @@ body {
 
   font-size: 14px;
   font-weight: 300;
+}
+
+.footer-logo-right {
+  position: absolute;
+  top: 170px;
+  left: 230px;
+  width: 400px;
+  opacity: 0.55;
+  z-index: 1;
 }
 
 @media (max-width: 1200px) {

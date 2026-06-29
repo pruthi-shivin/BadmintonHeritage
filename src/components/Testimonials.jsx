@@ -1,7 +1,16 @@
 import { testimonials } from "../data/testimonialsData";
 
+import { useGSAP } from "@gsap/react";
+import testimonialsAnimation from "../animations/testimonials";
 
 const Testimonials = () => {
+
+  useGSAP(()=>{
+
+    testimonialsAnimation();
+
+});
+
   const renderCard = (item, index) => (
     <div
       key={index}
@@ -26,7 +35,7 @@ const Testimonials = () => {
         </div>
       </div>
 
-      {item.large && (
+      {item.image && (
         <>
           <div className="testimonial-book">
             <img

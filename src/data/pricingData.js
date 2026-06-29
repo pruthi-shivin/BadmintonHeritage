@@ -23,6 +23,6 @@ export const pricingPlans = [
       "Sharpen technique, strategy, and match play to elevate your game.",
     price: "7,000",
     duration: "/months",
-    featured: true,
+    featured: false,
   },
 ];
