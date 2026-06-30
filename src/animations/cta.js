@@ -14,7 +14,6 @@ const ctaAnimation = () => {
   });
 
   tl
-
     .from(".cta-subtitle", {
       opacity: 0,
       y: 20,
@@ -34,11 +33,10 @@ const ctaAnimation = () => {
     }, "-=0.4")
 
     .from(".cta-button", {
-    opacity: 0,
-    y: 20,
-    duration: 0.5,
-    ease: "power2.out"
-}, "-=0.2")
+      opacity: 0,
+      y: 20,
+      duration: 0.5,
+    }, "-=0.2");
 
   gsap.to(".cta-leaf-left", {
     y: -10,

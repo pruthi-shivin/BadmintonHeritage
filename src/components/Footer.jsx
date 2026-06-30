@@ -1,7 +1,17 @@
 import logo1 from "../assets/logo.svg";
 import logo from "../assets/logo2.svg";
 
+import { useGSAP } from "@gsap/react";
+import footerAnimation from "../animations/footer";
+
+import { useRef } from "react";
+import gsap from "gsap";
+
 const Footer = () => {
+  useGSAP(() => {
+    footerAnimation();
+});
+
   return (
     <footer className="footer">
 

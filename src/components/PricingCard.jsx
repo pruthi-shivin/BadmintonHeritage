@@ -1,9 +1,8 @@
-import { useRef, useState } from "react";
-import gsap from "gsap";
-
 import pricingBg from "../assets/advanced-pricing-bg.svg";
-import arrowRight from "../assets/arrow-right.svg";
-import arrowDiagonal from "../assets/arrow-diagonal.svg";
+import arrowRight from "../assets/arrow-right.svg"
+
+import { useRef } from "react";
+import gsap from "gsap";
 
 const PricingCard = ({
   title,
@@ -12,18 +11,14 @@ const PricingCard = ({
   duration,
 }) => {
 
-  const [hovered, setHovered] = useState(false);
-
   const cardRef = useRef(null);
+  const arrowRef = useRef(null);
   const bgRef = useRef(null);
-
   const titleRef = useRef(null);
   const descRef = useRef(null);
   const priceRef = useRef(null);
 
   const handleEnter = () => {
-
-    setHovered(true);
 
     gsap.to(cardRef.current, {
       backgroundColor: "#000B84",
@@ -31,6 +26,12 @@ const PricingCard = ({
       duration: 0.35,
       ease: "power2.out",
       boxShadow: "0 20px 50px rgba(0,0,0,.18)",
+    });
+
+    gsap.to(arrowRef.current, {
+      rotation: -45,
+      color: "#FFFFFF",
+      duration: 0.3,
     });
 
     gsap.to(bgRef.current, {
@@ -45,12 +46,9 @@ const PricingCard = ({
         duration: 0.35,
       }
     );
-
   };
 
   const handleLeave = () => {
-
-    setHovered(false);
 
     gsap.to(cardRef.current, {
       backgroundColor: "#FFFFFF",
@@ -58,6 +56,12 @@ const PricingCard = ({
       duration: 0.35,
       ease: "power2.out",
       boxShadow: "0 0 0 rgba(0,0,0,0)",
+    });
+
+    gsap.to(arrowRef.current, {
+      rotation: 0,
+      color: "#4B57F5",
+      duration: 0.3,
     });
 
     gsap.to(bgRef.current, {
@@ -83,7 +87,6 @@ const PricingCard = ({
   };
 
   return (
-
     <div
       ref={cardRef}
       className="pricing-card"
@@ -98,14 +101,13 @@ const PricingCard = ({
         className="pricing-card-bg"
       />
 
-      <button className="pricing-card__icon pricing-card__icon--blue">
-
+      <button
+        ref={arrowRef}
+        className="pricing-card__icon pricing-card__icon--blue"
+      >
         <img
-          src={hovered ? arrowDiagonal : arrowRight}
-          alt=""
-          className="pricing-arrow"
+          src={arrowRight}
         />
-
       </button>
 
       <h3 ref={titleRef}>
@@ -125,7 +127,6 @@ const PricingCard = ({
       </div>
 
     </div>
-
   );
 };
 

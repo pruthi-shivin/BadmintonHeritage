@@ -56,7 +56,7 @@ const Hero = () => {
               <img src={avatar4} alt="" />
             </div>
 
-            <p class="font-medium text-[#FFFFFF]">
+            <p className="font-medium text-[#FFFFFF]">
               Trusted By <span>100K+</span> Players
             </p>
           </div>

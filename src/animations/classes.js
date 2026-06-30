@@ -3,40 +3,43 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const classesAnimation = () => {
+const classesAnimation = (section) => {
+
+  const q = gsap.utils.selector(section);
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: ".classes-section",
+      trigger: section,
       start: "top 70%",
-      once: true,
+      toggleActions: "play none none reverse",
+      invalidateOnRefresh: true,
     },
   });
 
   tl
 
-    .from(".classes-left .section-tag", {
+    .from(q(".section-tag"), {
       y: 20,
       opacity: 0,
       duration: 0.5,
       ease: "power3.out",
     })
 
-    .from(".classes-left .section-heading", {
-      y: 40,
+    .from(q(".section-heading"), {
+      y: 35,
       opacity: 0,
       duration: 0.7,
       ease: "power3.out",
     }, "-=0.2")
 
-    .from(".classes-right", {
-      x: 80,
+    .from(q(".body-text"), {
+      x: 60,
       opacity: 0,
-      duration: 0.8,
+      duration: 0.7,
       ease: "power3.out",
-    }, "-=0.5")
+    }, "-=0.4")
 
-    .from(".program-card", {
+    .from(q(".program-card"), {
       y: 80,
       opacity: 0,
       stagger: 0.18,

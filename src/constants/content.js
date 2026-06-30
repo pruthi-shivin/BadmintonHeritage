@@ -12,14 +12,14 @@ export const PROGRAMS = [
 
   {
     title: "Advanced Program",
-    image: advanced,
+    image: pro,
     description:
       "Builds skill, strategy, and match confidence for competitive play."
   },
 
   {
     title: "PRO Advanced Program",
-    image: pro,
+    image: advanced,
     description:
       "High-performance coaching with match-focused development."
   }

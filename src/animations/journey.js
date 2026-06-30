@@ -36,12 +36,11 @@ const journeyAnimation = () => {
       ease: "back.out(1.8)",
     }, "-=0.4");
 
-  // Floating animation
   gsap.to(".journey-card", {
     y: -10,
     duration: 2.5,
-    repeat: -1,
-    yoyo: true,
+    repeat: 0,
+    yoyo: false,
     ease: "sine.inOut",
   });
 

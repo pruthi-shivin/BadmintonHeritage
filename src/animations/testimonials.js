@@ -18,11 +18,9 @@ const testimonialsAnimation = () => {
     tl
 
     .from(".testimonials-title",{
-
         y:40,
         opacity:0,
         duration:.8,
-
         ease:"power3.out"
 
     })

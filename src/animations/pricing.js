@@ -1,47 +1,70 @@
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-const pricingAnimation = () => {
+    const pricingAnimation = (section) => {
+        // console.log("Pricing animation called", section);
+        const q = gsap.utils.selector(section);
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".pricing-section",
-      start: "top 70%",
-      once: true,
-    },
-  });
+        const tl = gsap.timeline({
 
-  tl
+            scrollTrigger:{
+                trigger:section,
+                start:"top 70%",
+                once:true,
 
-    .from(".pricing-header", {
-      y: 40,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power3.out",
-    })
+                // onEnter: () => console.log("Pricing entered"),
+            }
 
-    .from(".pricing-card", {
-      y: 80,
-      opacity: 0,
-      stagger: 0.18,
-      duration: 0.8,
-      ease: "power3.out",
-    }, "-=0.3")
+        });
 
-    .from(".pricing-right", {
-      x: 120,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    }, "-=0.5")
+        tl
+        .from(q(".pricing-header"),{
 
-    .from(".pricing-line", {
-      opacity: 0,
-      duration: 1.2,
-    }, "-=1");
+            y:40,
+            opacity:0,
+            duration:.7,
+            ease:"power3.out"
 
-};
+        })
 
-export default pricingAnimation;
+        .from(q(".pricing-card"),{
+
+            x:5,
+            opacity:1,
+            stagger:.18,
+            duration:.3,
+            ease:"power1.out"
+
+        },"-=.3")
+
+        .from(q(".pricing-left"),{
+
+            x:120,
+            opacity:0,
+            duration:1,
+            ease:"power3.out"
+
+        },"-=.5")
+
+        .from(q(".pricing-right"),{
+
+            x:120,
+            opacity:0,
+            duration:1,
+            ease:"power3.out"
+
+        },"-=.5")
+        
+
+        .from(q(".pricing-line"),{
+
+            opacity:0,
+            duration:1
+
+        },"-=1");
+
+    };
+
+    export default pricingAnimation;

@@ -90,7 +90,7 @@ const Journey = () => {
             </p>
 
             <button className="journey-btn">
-              Become A Member
+              Become a Member
             </button>
 
           </div>

@@ -6,19 +6,80 @@ import coachingImage from "../assets/private-coaching.svg";
 import pricingLine from "../assets/pricing-line.svg";
 import pricingBg from "../assets/advanced-pricing-bg.svg";
 
-import arrow from "../assets/arrow-diagonal.svg"
+import arrowRight from "../assets/arrow-right.svg"
 
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import pricingAnimation from "../animations/pricing";
+import { useRef } from "react";
+import { useState } from "react";
+
 
 
 const Pricing = () => {
-  useGSAP(() => {
-    pricingAnimation();
-});
+  
+  const sectionRef = useRef(null);
+  const imageRef = useRef(null);
+  const rightCardRef = useRef(null);
+  const arrowRef = useRef(null);
+  const overlayRef = useRef(null);
+  const [hovered, setHovered] = useState(false);
 
+  useGSAP(() => {
+      pricingAnimation(sectionRef.current);
+  }, { scope: sectionRef });
+
+  const handleEnter = () => {
+
+  setHovered(true);
+
+  gsap.to(rightCardRef.current,{
+    y:-10,
+    duration:.35,
+    ease:"power2.out",
+    boxShadow:"0 20px 50px rgba(0,0,0,.18)"
+  });
+
+  gsap.to(overlayRef.current,{
+    y:-4,
+    duration:.35,
+    ease:"power2.out"
+  });
+
+  gsap.to(arrowRef.current,{
+    rotation:-45,
+    transformOrigin:"50% 50%",
+    duration: 0.3,
+  });
+}
+
+const handleLeave = () => {
+
+  setHovered(false);
+
+  gsap.to(rightCardRef.current,{
+    y:0,
+    duration:.35,
+    ease:"power2.out",
+    boxShadow:"0 0 0 rgba(0,0,0,0)"
+  });
+
+  gsap.to(overlayRef.current,{
+    y:0,
+    duration:.35,
+    ease:"power2.out"
+  });
+
+  gsap.to(arrowRef.current,{
+    rotation:0,
+    transformOrigin:"50% 50%",
+    duration:0.3,
+  });
+}
   return (
-    <section className="pricing-section">
+    <section
+    ref={sectionRef} 
+    className="pricing-section">
 
         <img
           src={pricingLine}
@@ -67,20 +128,31 @@ const Pricing = () => {
 
           </div>
 
-
-          <div className="pricing-right">
+          <div 
+          ref={rightCardRef}
+          className="pricing-right"
+          onMouseEnter={handleEnter}
+          onMouseLeave={handleLeave}          
+          >
 
             <img
+              ref={imageRef}
               src={coachingImage}
               alt="Private Coaching"
               className="pricing-image"
             />
 
-            <div className="pricing-overlay">
+            <div 
+            ref={overlayRef}
+            className="pricing-overlay">
 
-              <button className="pricing-card__icon pricing-card__icon--blue">
-                <img 
-                  src={arrow}
+              <button className="pricing-card__icon pricing-card__icon--blue"
+              >
+                <img
+                    ref={arrowRef}
+                    src={arrowRight}
+                    alt=""
+                    className="pricing-arrow"
                 />
               </button>
 

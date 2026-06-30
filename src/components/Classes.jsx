@@ -3,14 +3,19 @@ import arrow from "../assets/arrow-diagonal.svg"
 
 import { useGSAP } from "@gsap/react";
 import classesAnimation from "../animations/classes";
+import { useRef } from "react";
 
 const Classes = () => {
-  useGSAP(() => {
-  classesAnimation();
-});
+  const sectionRef = useRef(null);
+
+useGSAP(() => {
+  classesAnimation(sectionRef.current);
+}, { scope: sectionRef });
 
   return (
-    <section className="section">
+    <section
+      ref={sectionRef} 
+      className="section">
 
       <div className="container">
 
@@ -22,7 +27,7 @@ const Classes = () => {
               • Our class
             </div>
 
-            <h2 className="section-heading mt-5">
+            <h2 className="section-heading">
               Where every match,
               moment, and memory is
               shaped by excellence.
